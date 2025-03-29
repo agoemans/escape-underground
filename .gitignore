@@ -1,0 +1,31 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Mac system files
+.DS_Store
+
+# Environment variables
+.env
+
+node_modules
+dist
