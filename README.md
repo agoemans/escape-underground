@@ -1,7 +1,7 @@
 # Escape Underground
 
 This project is a TypeScript-based application. The boilerplate code for this project was generated using GitHub Copilot.
-This is just a prototype project, to play around with code generation for Google Copilot. I want to see how much boilerplate code can be generated for this game engine and how much I have to clean up/tweak. 
+This is just a prototype project, to play around with code generation for GitHub Copilot. I want to see how much boilerplate code can be generated for this game engine and how much I have to clean up/tweak. 
 
 ## Installation
 
