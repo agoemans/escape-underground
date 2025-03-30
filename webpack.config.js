@@ -1,6 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const CustomSpritesheetGeneratorPlugin = require('./tasks/customSpritesheetCreatorPlugin');
 module.exports = {
   entry: './src/index.ts',
   mode: "production",
@@ -26,6 +26,7 @@ module.exports = {
     port: 9000
   },
   plugins: [
+    new CustomSpritesheetGeneratorPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         { from: 'assets', to: 'assets' },
