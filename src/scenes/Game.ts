@@ -28,7 +28,7 @@ export class Game extends Phaser.Scene {
         let background = this.add.image(0, 0, "background");
         background.setOrigin(0, 0);
         
-        this.add.tileSprite(400, 300, 800, 600, "floor");
+        this.add.tileSprite(400, 300, 800, 600, "atlas01", "floor");
         
         this.decorItems = this.physics.add.staticGroup();
         this.walls = this.physics.add.staticGroup();
@@ -184,15 +184,15 @@ export class Game extends Phaser.Scene {
                     this.door = new Door(this, x, y); // Door
                     this.doorLocked = true;
                 } else if (tile === "k") {
-                    this.keycard = this.physics.add.sprite(x, y, "keycard"); // Keycard
+                    this.keycard = this.physics.add.sprite(x, y, 'atlas01', "keycard"); // Keycard
                 } else if (tile === "p") {
-                    this.player = new Player(this, x, y, "player"); // Player
+                    this.player = new Player(this, x, y, 'atlas01', "player"); // Player
                 } else if (tile === "e") {
-                    this.enemy = new Enemy(this, x, y, "enemy"); // Enemy
+                    this.enemy = new Enemy(this, x, y, 'atlas01', "enemy"); // Enemy
                     this.enemy.playRun();
                 } else if (tile === "I") {
-                    let decorType = `decor${Utils.getRandomNumber(1, 5)}`;
-                    this.decorItems.add(new Decor(this, x, y, decorType)); // Decor
+                    let decorType = `decor_${Utils.getRandomNumber(1, 5)}`;
+                    this.decorItems.add(new Decor(this, x, y, 'atlas01', decorType)); // Decor
                 }
             }
         }
