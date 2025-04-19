@@ -14,7 +14,9 @@ This is just a prototype project, to play around with code generation for GitHub
     cd escape-underground
     ```
 3. Install dependencies:
+    Note: Use the node version set in nvmrc
     ```bash
+    nvm use
     npm install
     ```
 

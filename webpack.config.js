@@ -10,6 +10,30 @@ module.exports = {
         test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: ["@babel/preset-env", "@babel/preset-react"]
+        }
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader",
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       }
     ]
   },
@@ -17,13 +41,13 @@ module.exports = {
     extensions: ['.ts', '.js']
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'game.js',
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    host: 'localhost',
     compress: true,
-    port: 9000
+    port: 8080
   },
   plugins: [
     new CustomSpritesheetGeneratorPlugin(),

@@ -6,6 +6,7 @@ import { Door } from '../objects/Door';
 import { Utils } from '../helper/utils';
 import { Wall } from '../objects/Wall';
 import { LevelGenerator } from '../helper/levelGenerator';
+import { DEFAULT_HEIGHT, DEFAULT_WIDTH } from '../shared/globals';
 
 export class Game extends Phaser.Scene {
     public player!: Player;
@@ -28,7 +29,7 @@ export class Game extends Phaser.Scene {
         let background = this.add.image(0, 0, "background");
         background.setOrigin(0, 0);
         
-        this.add.tileSprite(400, 300, 800, 600, "atlas01", "floor");
+        this.add.tileSprite(DEFAULT_WIDTH / 2, DEFAULT_HEIGHT / 2, DEFAULT_WIDTH, DEFAULT_HEIGHT, "atlas01", "floor");
         
         this.decorItems = this.physics.add.staticGroup();
         this.walls = this.physics.add.staticGroup();
@@ -117,15 +118,16 @@ export class Game extends Phaser.Scene {
     }
 
     createLevel() {
-        const _levelMap = [
-            "WWWWWWWWWWW",  // Row 0 (Walls)
-            "W    II p W",  // Row 1 (Player start, decor)
-            "W   WW    W",  // Row 2 (Walls and open space)
-            "W k     e W",  // Row 3 (Keycard, enemy, walls)
-            "W   WW    W",  // Row 4 (Walls and decor)
-            "W I       W",  // Row 5 (Decor and open space)
-            "W   I     W",  // Row 6 (Decor and open space)
-            "WWWWWWWWdWW"   // Row 7 (Walls)
+        const levelMap = [
+            "WWWWWWWWWWWWWWW",  // Row 0 (Walls)
+            "W    II p     W",  // Row 1 (Player start, decor)
+            "W   WW        W",  // Row 2 (Walls and open space)
+            "W k     e     W",  // Row 3 (Keycard, enemy, walls)
+            "W   WW        W",  // Row 4 (Walls and decor)
+            "W I           W",  // Row 5 (Decor and open space)
+            "W   I         W",  // Row 6 (Decor and open space)
+            "W   I         W",  // Row 7 (Decor and open space)
+            "WWWWWWWWdWWWWWW"   // Row 8 (Walls)
         ];
 
         const levelMap_ = [
@@ -139,8 +141,8 @@ export class Game extends Phaser.Scene {
             "WWWWWWWWWWW"
         ];
         //w, h
-        const levelMap =  LevelGenerator.generateLevel(11, 8);
-        console.log(levelMap.map(row => row.join('')).join('\n'));
+        // const levelMap =  LevelGenerator.generateLevel(11, 8);
+        // console.log(levelMap.map(row => row.join('')).join('\n'));
         // Define tile size
         const tileSize = 80; // Adjust based on sprite sizes
 

@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { Boot } from './Boot';
 
 export class Preloader extends Phaser.Scene {
   constructor() {
