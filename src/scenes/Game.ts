@@ -29,7 +29,7 @@ export class Game extends Phaser.Scene {
         let background = this.add.image(0, 0, "background");
         background.setOrigin(0, 0);
         
-        this.add.tileSprite(DEFAULT_WIDTH / 2, DEFAULT_HEIGHT / 2, DEFAULT_WIDTH, DEFAULT_HEIGHT, "atlas01", "floor");
+        this.add.tileSprite(this.game.scale.width / 2, this.game.scale.height / 2, this.game.scale.width, this.game.scale.height, "atlas01", "floor");
         
         this.decorItems = this.physics.add.staticGroup();
         this.walls = this.physics.add.staticGroup();
@@ -120,14 +120,14 @@ export class Game extends Phaser.Scene {
     createLevel() {
         const levelMap = [
             "WWWWWWWWWWWWWWW",  // Row 0 (Walls)
-            "W    II p     W",  // Row 1 (Player start, decor)
-            "W   WW        W",  // Row 2 (Walls and open space)
-            "W k     e     W",  // Row 3 (Keycard, enemy, walls)
+            "W K  WO       W",  // Row 1 (Player start, decor)
+            "W W  W        W",  // Row 2 (Walls and open space)
+            "W       E     W",  // Row 3 (Keycard, enemy, walls)
             "W   WW        W",  // Row 4 (Walls and decor)
-            "W I           W",  // Row 5 (Decor and open space)
-            "W   I         W",  // Row 6 (Decor and open space)
-            "W   I         W",  // Row 7 (Decor and open space)
-            "WWWWWWWWdWWWWWW"   // Row 8 (Walls)
+            "W O           W",  // Row 5 (Decor and open space)
+            "W   O         W",  // Row 6 (Decor and open space)
+            "W   O P       W",  // Row 7 (Decor and open space)
+            "WWWWWWWWDWWWWWW"   // Row 8 (Walls)
         ];
 
         const levelMap_ = [
@@ -145,56 +145,46 @@ export class Game extends Phaser.Scene {
         // console.log(levelMap.map(row => row.join('')).join('\n'));
         // Define tile size
         const tileSize = 80; // Adjust based on sprite sizes
-
-        // Loop through the level map and create objects
-        // for (let row = 0; row < levelMap.length; row++) {
-        //     for (let col = 0; col < levelMap[row].length; col++) {
-        //         let tile = levelMap[row][col];
-        //         let x = col * tileSize;
-        //         let y = row * tileSize;
-
-        //         if (tile === "W") {
-        //             this.walls.add(new Wall(this, x, y));
-        //         } else if (tile === "d") {
-        //             this.door = new Door(this, x, y);
-        //             this.doorLocked = true;
-        //         } else if (tile === "k") {
-        //             // Keycard
-        //             this.keycard = this.physics.add.sprite(x, y, "keycard");
-        //         } else if (tile === "p") {
-        //             this.player = new Player(this, x, y, "player");
-        //         } else if (tile === "e") {
-        //             this.enemy = new Enemy(this, x, y, "enemy");
-        //             this.enemy.playRun();
-        //         } else if (tile === "I") {
-        //             let decorType = `decor${Utils.getRandomNumber(1, 5)}`;
-        //             this.decorItems.add(new Decor(this, x, y, decorType));
-        //         }
-        //     }
-        // }
+        const screenWidth = this.game.scale.width;
+        const screenHeight = this.game.scale.height;
+        const levelWidth = levelMap[0].length * tileSize;
+        const levelHeight = levelMap.length * tileSize;
+        // Center the level on the screen
+        const offsetX = (screenWidth - levelWidth) / 2;
+        const offsetY = (screenHeight - levelHeight) / 2;
 
         for (let row = 0; row < levelMap.length; row++) {
             for (let col = 0; col < levelMap[row].length; col++) {
                 let tile = levelMap[row][col]; // Access each tile in the nested array
-                let x = col * tileSize;
-                let y = row * tileSize;
+                let x = col * tileSize + ((screenWidth - levelWidth + tileSize) / 2); // Center the tile
+                let y = row * tileSize + ((screenHeight - levelHeight + tileSize) / 2); // Center the tile
         
-                // Handle each tile type
-                if (tile === "W") {
-                    this.walls.add(new Wall(this, x, y)); // Wall
-                } else if (tile === "d") {
-                    this.door = new Door(this, x, y); // Door
-                    this.doorLocked = true;
-                } else if (tile === "k") {
-                    this.keycard = this.physics.add.sprite(x, y, 'atlas01', "keycard"); // Keycard
-                } else if (tile === "p") {
-                    this.player = new Player(this, x, y, 'atlas01', "player"); // Player
-                } else if (tile === "e") {
-                    this.enemy = new Enemy(this, x, y, 'atlas01', "enemy"); // Enemy
-                    this.enemy.playRun();
-                } else if (tile === "I") {
-                    let decorType = `decor_${Utils.getRandomNumber(1, 5)}`;
-                    this.decorItems.add(new Decor(this, x, y, 'atlas01', decorType)); // Decor
+
+                switch (tile) {
+                    case "W":
+                        this.walls.add(new Wall(this, x, y)); // Wall
+                        break;
+                    case "D":
+                        this.door = new Door(this, x, y); // Door
+                        this.doorLocked = true;
+                        break;
+                    case "K":
+                        this.keycard = this.physics.add.sprite(x, y, 'atlas01', "keycard"); // Keycard
+                        break;
+                    case "P":
+                        this.player = new Player(this, x, y, 'atlas01', "player"); // Player
+                        break;
+                    case "E":
+                        this.enemy = new Enemy(this, x, y, 'atlas01', "enemy"); // Enemy
+                        this.enemy.playRun();
+                        break;
+                    case "O":
+                    case "I":
+                        let decorType = `decor_${tile}_${Utils.getRandomNumber(1, 5)}`;
+                        this.decorItems.add(new Decor(this, x, y, 'atlas01', decorType)); // Decor
+                        break;
+                    default:
+                        break; // Empty space or unrecognized tile
                 }
             }
         }

@@ -5,6 +5,7 @@ export class Wall extends Phaser.Physics.Arcade.Sprite {
         super(scene, x, y, 'atlas01', 'wall');
         scene.add.existing(this);
         scene.physics.add.existing(this, true);
+        this.setOrigin(0.5, 0.5);
         this.setImmovable(true);
     }
 }
