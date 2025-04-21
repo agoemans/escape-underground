@@ -4,7 +4,7 @@ const path = require('path');
 const { getImagePaths } = require('./getImagePaths');
 const { writeToFile } = require('./writeToFile');
 
-const folderNames = ['objects', 'people'];
+const folderNames = ['environment_decor', 'interactive_objects', 'items_decor', 'people'];
 
 async function generateJSONFile(jsonMetadata, fileName, totalWidth, maxHeight) {
   let phaserJson = {
@@ -101,7 +101,6 @@ async function createSpritesheet() {
 
   // Save JSON metadata
   await generateJSONFile(jsonMetadata, fileBaseName, totalWidth, maxHeight);
-  // await writeToFile(path.join(process.cwd(), `assets/atlases/atlas01.json`), JSON.stringify(jsonMetadata, null, 4));
 
   console.log('✅ Spritesheet and metadata generated successfully!');
 }

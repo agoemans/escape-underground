@@ -64,30 +64,72 @@
             }
         },
         {
-            "filename": "decor_O_1",
+            "filename": "decor_I_4",
             "frame": {
                 "x": 264,
                 "y": 0,
-                "w": 160,
-                "h": 213
+                "w": 56,
+                "h": 80
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 160,
-                "h": 213
+                "w": 56,
+                "h": 80
             },
             "sourceSize": {
-                "w": 160,
-                "h": 213
+                "w": 56,
+                "h": 80
+            }
+        },
+        {
+            "filename": "decor_I_5",
+            "frame": {
+                "x": 320,
+                "y": 0,
+                "w": 56,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 56,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 56,
+                "h": 80
+            }
+        },
+        {
+            "filename": "decor_O_1",
+            "frame": {
+                "x": 376,
+                "y": 0,
+                "w": 80,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 80,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 80
             }
         },
         {
             "filename": "decor_O_2",
             "frame": {
-                "x": 424,
+                "x": 456,
                 "y": 0,
                 "w": 160,
                 "h": 120
@@ -108,7 +150,7 @@
         {
             "filename": "decor_O_3",
             "frame": {
-                "x": 584,
+                "x": 616,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -127,9 +169,51 @@
             }
         },
         {
+            "filename": "decor_O_4",
+            "frame": {
+                "x": 696,
+                "y": 0,
+                "w": 80,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 80,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 80
+            }
+        },
+        {
+            "filename": "decor_O_5",
+            "frame": {
+                "x": 776,
+                "y": 0,
+                "w": 160,
+                "h": 120
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 160,
+                "h": 120
+            },
+            "sourceSize": {
+                "w": 160,
+                "h": 120
+            }
+        },
+        {
             "filename": "door_closed",
             "frame": {
-                "x": 664,
+                "x": 936,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -150,7 +234,7 @@
         {
             "filename": "floor",
             "frame": {
-                "x": 744,
+                "x": 1016,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -171,7 +255,7 @@
         {
             "filename": "keycard",
             "frame": {
-                "x": 824,
+                "x": 1096,
                 "y": 0,
                 "w": 22,
                 "h": 32
@@ -192,7 +276,7 @@
         {
             "filename": "separator",
             "frame": {
-                "x": 846,
+                "x": 1118,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -213,7 +297,7 @@
         {
             "filename": "wall",
             "frame": {
-                "x": 926,
+                "x": 1198,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -234,7 +318,7 @@
         {
             "filename": "wall2",
             "frame": {
-                "x": 1006,
+                "x": 1278,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -255,7 +339,7 @@
         {
             "filename": "wall3",
             "frame": {
-                "x": 1086,
+                "x": 1358,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -276,7 +360,7 @@
         {
             "filename": "wall_small",
             "frame": {
-                "x": 1166,
+                "x": 1438,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -297,7 +381,7 @@
         {
             "filename": "enemy",
             "frame": {
-                "x": 1246,
+                "x": 1518,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -318,7 +402,7 @@
         {
             "filename": "player",
             "frame": {
-                "x": 1326,
+                "x": 1598,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -340,8 +424,8 @@
     "meta": {
         "image": "atlas01.png",
         "size": {
-            "w": 1406,
-            "h": 213
+            "w": 1678,
+            "h": 120
         },
         "scale": "1"
     }

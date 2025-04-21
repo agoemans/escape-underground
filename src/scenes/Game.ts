@@ -6,7 +6,7 @@ import { Door } from '../objects/Door';
 import { Utils } from '../helper/utils';
 import { Wall } from '../objects/Wall';
 import { LevelGenerator } from '../helper/levelGenerator';
-import { DEFAULT_HEIGHT, DEFAULT_WIDTH } from '../shared/globals';
+import { TILE_SIZE } from '../shared/globals';
 
 export class Game extends Phaser.Scene {
     public player!: Player;
@@ -144,7 +144,7 @@ export class Game extends Phaser.Scene {
         // const levelMap =  LevelGenerator.generateLevel(11, 8);
         // console.log(levelMap.map(row => row.join('')).join('\n'));
         // Define tile size
-        const tileSize = 80; // Adjust based on sprite sizes
+        const tileSize = TILE_SIZE; // Adjust based on sprite sizes
         const screenWidth = this.game.scale.width;
         const screenHeight = this.game.scale.height;
         const levelWidth = levelMap[0].length * tileSize;
