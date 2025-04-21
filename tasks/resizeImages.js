@@ -2,38 +2,37 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 const { getImagePaths } = require('./getImagePaths');
-const { writeToFile } = require('./writeToFile');
 
 async function resizeImages() {
-    const folderNames = ['environment_decor', 'interactive_objects', 'people'];
-    const result = await getImagePaths(folderNames);
+    const folderNames = ['environment_decor', 'people'];
+    const result = await getImagePaths('src_assets', folderNames);
     if (!result.success) {
         throw new Error('Error getting image paths', result.error);
     }
-
-    console.log('Image paths:', result.data);
     const imagePaths = result.data;
 
-    for (const path of imagePaths) {
-        sharp(path)
-            .resize(64)
+    for (const imgPath of imagePaths) {
+        sharp(imgPath)
+            .resize({
+                width: 64,
+                height: 64,
+                kernel: sharp.kernel.nearest,
+            })
             .png({ quality: 80 })
-            .toFile(path.replace(/\.png$/, '_resized.png'), (err, info) => {
-                if (err) {
-                    console.error('Error resizing image:', err);
-                } else {
-                    console.log('Resized image saved:', info);
-                }
+            .toFile(imgPath + '.tmp')
+            .then(() => {
+                fs.rename(imgPath + '.tmp', imgPath, (err) => {
+                    if (err) {
+                        console.error(`Error renaming ${imgPath}:`, err);
+                        return;
+                    }
+                })
+            })
+            .catch(err => {
+                console.error(`Error resizing ${imgPath}:`, err);
             });
     }
 
-    //     sharp('input.jpg')
-    //   .rotate()
-    //   .resize(200)
-    //   .jpeg({ mozjpeg: true })
-    //   .toBuffer()
-    //   .then( data => { ... })
-    //   .catch( err => { ... });
 }
 
 resizeImages()

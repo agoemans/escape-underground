@@ -1,9 +1,135 @@
 {
     "frames": [
         {
-            "filename": "decor_I_1",
+            "filename": "floor",
             "frame": {
                 "x": 0,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 64,
+                "h": 64
+            }
+        },
+        {
+            "filename": "wall_01",
+            "frame": {
+                "x": 64,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 64,
+                "h": 64
+            }
+        },
+        {
+            "filename": "wall_02",
+            "frame": {
+                "x": 128,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 64,
+                "h": 64
+            }
+        },
+        {
+            "filename": "wall_03",
+            "frame": {
+                "x": 192,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 64,
+                "h": 64
+            }
+        },
+        {
+            "filename": "door_closed",
+            "frame": {
+                "x": 256,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 64,
+                "h": 64
+            }
+        },
+        {
+            "filename": "keycard",
+            "frame": {
+                "x": 320,
+                "y": 0,
+                "w": 32,
+                "h": 61
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 61
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 61
+            }
+        },
+        {
+            "filename": "decor_I_1",
+            "frame": {
+                "x": 352,
                 "y": 0,
                 "w": 128,
                 "h": 80
@@ -24,7 +150,7 @@
         {
             "filename": "decor_I_2",
             "frame": {
-                "x": 128,
+                "x": 480,
                 "y": 0,
                 "w": 56,
                 "h": 80
@@ -45,7 +171,7 @@
         {
             "filename": "decor_I_3",
             "frame": {
-                "x": 184,
+                "x": 536,
                 "y": 0,
                 "w": 80,
                 "h": 80
@@ -66,7 +192,7 @@
         {
             "filename": "decor_I_4",
             "frame": {
-                "x": 264,
+                "x": 616,
                 "y": 0,
                 "w": 56,
                 "h": 80
@@ -87,7 +213,7 @@
         {
             "filename": "decor_I_5",
             "frame": {
-                "x": 320,
+                "x": 672,
                 "y": 0,
                 "w": 56,
                 "h": 80
@@ -108,324 +234,156 @@
         {
             "filename": "decor_O_1",
             "frame": {
-                "x": 376,
+                "x": 728,
                 "y": 0,
-                "w": 80,
-                "h": 80
+                "w": 48,
+                "h": 64
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 80,
-                "h": 80
+                "w": 48,
+                "h": 64
             },
             "sourceSize": {
-                "w": 80,
-                "h": 80
+                "w": 48,
+                "h": 64
             }
         },
         {
             "filename": "decor_O_2",
             "frame": {
-                "x": 456,
+                "x": 776,
                 "y": 0,
-                "w": 160,
-                "h": 120
+                "w": 100,
+                "h": 64
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 160,
-                "h": 120
+                "w": 100,
+                "h": 64
             },
             "sourceSize": {
-                "w": 160,
-                "h": 120
+                "w": 100,
+                "h": 64
             }
         },
         {
             "filename": "decor_O_3",
             "frame": {
-                "x": 616,
+                "x": 876,
                 "y": 0,
-                "w": 80,
-                "h": 80
+                "w": 72,
+                "h": 64
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 80,
-                "h": 80
+                "w": 72,
+                "h": 64
             },
             "sourceSize": {
-                "w": 80,
-                "h": 80
+                "w": 72,
+                "h": 64
             }
         },
         {
             "filename": "decor_O_4",
             "frame": {
-                "x": 696,
+                "x": 948,
                 "y": 0,
-                "w": 80,
-                "h": 80
+                "w": 64,
+                "h": 64
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 80,
-                "h": 80
+                "w": 64,
+                "h": 64
             },
             "sourceSize": {
-                "w": 80,
-                "h": 80
+                "w": 64,
+                "h": 64
             }
         },
         {
             "filename": "decor_O_5",
             "frame": {
-                "x": 776,
+                "x": 1012,
                 "y": 0,
-                "w": 160,
-                "h": 120
+                "w": 86,
+                "h": 64
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 160,
-                "h": 120
+                "w": 86,
+                "h": 64
             },
             "sourceSize": {
-                "w": 160,
-                "h": 120
-            }
-        },
-        {
-            "filename": "door_closed",
-            "frame": {
-                "x": 936,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "sourceSize": {
-                "w": 80,
-                "h": 80
-            }
-        },
-        {
-            "filename": "floor",
-            "frame": {
-                "x": 1016,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "sourceSize": {
-                "w": 80,
-                "h": 80
-            }
-        },
-        {
-            "filename": "keycard",
-            "frame": {
-                "x": 1096,
-                "y": 0,
-                "w": 22,
-                "h": 32
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 22,
-                "h": 32
-            },
-            "sourceSize": {
-                "w": 22,
-                "h": 32
-            }
-        },
-        {
-            "filename": "separator",
-            "frame": {
-                "x": 1118,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "sourceSize": {
-                "w": 80,
-                "h": 80
-            }
-        },
-        {
-            "filename": "wall",
-            "frame": {
-                "x": 1198,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "sourceSize": {
-                "w": 80,
-                "h": 80
-            }
-        },
-        {
-            "filename": "wall2",
-            "frame": {
-                "x": 1278,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "sourceSize": {
-                "w": 80,
-                "h": 80
-            }
-        },
-        {
-            "filename": "wall3",
-            "frame": {
-                "x": 1358,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "sourceSize": {
-                "w": 80,
-                "h": 80
-            }
-        },
-        {
-            "filename": "wall_small",
-            "frame": {
-                "x": 1438,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 80,
-                "h": 80
-            },
-            "sourceSize": {
-                "w": 80,
-                "h": 80
+                "w": 86,
+                "h": 64
             }
         },
         {
             "filename": "enemy",
             "frame": {
-                "x": 1518,
+                "x": 1098,
                 "y": 0,
-                "w": 80,
-                "h": 80
+                "w": 64,
+                "h": 64
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 80,
-                "h": 80
+                "w": 64,
+                "h": 64
             },
             "sourceSize": {
-                "w": 80,
-                "h": 80
+                "w": 64,
+                "h": 64
             }
         },
         {
             "filename": "player",
             "frame": {
-                "x": 1598,
+                "x": 1162,
                 "y": 0,
-                "w": 80,
-                "h": 80
+                "w": 64,
+                "h": 64
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 80,
-                "h": 80
+                "w": 64,
+                "h": 64
             },
             "sourceSize": {
-                "w": 80,
-                "h": 80
+                "w": 64,
+                "h": 64
             }
         }
     ],
     "meta": {
         "image": "atlas01.png",
         "size": {
-            "w": 1678,
-            "h": 120
+            "w": 1226,
+            "h": 80
         },
         "scale": "1"
     }

@@ -120,14 +120,15 @@ export class Game extends Phaser.Scene {
     createLevel() {
         const levelMap = [
             "WWWWWWWWWWWWWWW",  // Row 0 (Walls)
-            "W K  WO       W",  // Row 1 (Player start, decor)
-            "W W  W        W",  // Row 2 (Walls and open space)
-            "W       E     W",  // Row 3 (Keycard, enemy, walls)
-            "W   WW        W",  // Row 4 (Walls and decor)
-            "W O           W",  // Row 5 (Decor and open space)
-            "W   O         W",  // Row 6 (Decor and open space)
-            "W   O P       W",  // Row 7 (Decor and open space)
-            "WWWWWWWWDWWWWWW"   // Row 8 (Walls)
+            "W K           W",  // Row 1 (Player start, decor)
+            "W    W  W     W",  // Row 2 (Walls and open space)
+            "W W     E     W",  // Row 3 (Keycard, enemy, walls)
+            "W    WWWWWWW  W",  // Row 4 (Walls and decor)
+            "W             W",  // Row 5 (Decor and open space)
+            "WWWWWWW       W",  // Row 6 (Decor and open space)
+            "W     WWW     W",  // Row 7 (Decor and open space)
+            "W      P      W",   // Row 8 (Walls)
+            "WWWWWWWWDWWWWWW"   // Row 9 (Walls)
         ];
 
         const levelMap_ = [
@@ -153,11 +154,16 @@ export class Game extends Phaser.Scene {
         const offsetX = (screenWidth - levelWidth) / 2;
         const offsetY = (screenHeight - levelHeight) / 2;
 
+        console.log("Level Width: ", levelWidth);
+        console.log("Level Height: ", levelHeight);
+        console.log("Screen Width: ", screenWidth);
+        console.log("Screen Height: ", screenHeight);
+
         for (let row = 0; row < levelMap.length; row++) {
             for (let col = 0; col < levelMap[row].length; col++) {
                 let tile = levelMap[row][col]; // Access each tile in the nested array
                 let x = col * tileSize + ((screenWidth - levelWidth + tileSize) / 2); // Center the tile
-                let y = row * tileSize + ((screenHeight - levelHeight + tileSize) / 2); // Center the tile
+                let y = row * tileSize + (((screenHeight - levelHeight) / 2) + ( tileSize / 2) ); // Center the tile
         
 
                 switch (tile) {
@@ -188,6 +194,8 @@ export class Game extends Phaser.Scene {
                 }
             }
         }
+
+        console.log("Level Map ", this.walls);
     }
 
     public gameOver() {

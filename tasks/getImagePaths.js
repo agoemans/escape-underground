@@ -10,9 +10,9 @@ async function getAllFiles(dir) {
   return files.flat();
 }
 
-async function getImagePaths(folderNames) {
+async function getImagePaths(parentPath, folderNames) {
     return new Promise(async (resolve, reject) => {
-        const filePromises = folderNames.map((folderName) => getAllFiles(path.join(process.cwd(), `src_assets/${folderName}`)));
+        const filePromises = folderNames.map((folderName) => getAllFiles(path.join(process.cwd(), `${parentPath}/${folderName}`)));
         const allFiles = await Promise.all(filePromises);
         if (allFiles.some((files) => files instanceof Error)) {
             reject({success: false, error: 'Error reading files'});

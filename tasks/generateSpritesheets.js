@@ -47,7 +47,7 @@ async function generateJSONFile(jsonMetadata, fileName, totalWidth, maxHeight) {
 
 // Function to create the spritesheet
 async function createSpritesheet() {
-  const result = await getImagePaths(folderNames);
+  const result = await getImagePaths('src_assets', folderNames);
   if (!result.success) {
     throw new Error('Error getting image paths', result.error);
   }
